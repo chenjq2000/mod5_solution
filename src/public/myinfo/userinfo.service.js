@@ -1,3 +1,10 @@
+(function() {
+"use strict";
+
+angular.module('public')
+.service('UserInfoService', UserInfoService);
+
+UserInfoService.$inject = ['MenuService', 'ApiPath'];
 function UserInfoService() {
   var service = this;
   service.user.firstName = '';
@@ -32,7 +39,9 @@ function UserInfoService() {
     return service.user.lastName !== '';
   };
 
-}
+
+ }
+
 
 
 })();
