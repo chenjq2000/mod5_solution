@@ -1,15 +1,18 @@
 <div class="container" >
 <fieldset>
-  <legend>Registration</legend>
+  <h1 class="text-center">Registration</h1>
   <form name='regForm' novalidate>
 
-
-        <input type="text" name="firstName" placeholder="First Name">
+   <div class="form-group">
+        <label class="control-label">First Name</label>
+        <input class="form-control" type="text" name="firstName" placeholder="First Name">
           <span ng-if="regForm.firstName.$invalid && regForm.firstName.$touched">
             Must be a valid first name
           </span>
-          <br>
-          <input type="text" name="lastName" placeholder="Last Name"
+    </div>
+     <div class="form-group">
+          <label class="control-label">Last Name</label>
+          <input class="form-control" type="text" name="lastName" placeholder="Last Name"
             ng-model="reg.lastName"
 
             ng-maxlength="30"
@@ -17,38 +20,42 @@
             <span ng-if="regForm.lastName.$invalid && regForm.lastName.$touched">
               Must be a valid last name
             </span>
-            <br>
-
-    <input type="email" name="email" placeholder="Email"
+  </div>
+  <div class="form-group">
+    <label class="control-label">Email</label>
+    <input class="form-control" type="email" name="email" placeholder="Email"
       ng-model="reg.email"
       ng-maxlength="60"
       required>
       <span ng-if="regForm.email.$invalid && regForm.email.$touched">
         Must be a valid email address: handle@domain format
       </span>
-      <br>
-
-    <input type="text" name="phone" placeholder="Phone ###-###-####"
+  </div>
+  <div class="form-group">
+    <label class="control-label">Phone</label>
+    <input class="form-control" type="text" name="phone" placeholder="Phone ###-###-####"
       ng-model="reg.phone"
       ng-maxlength="30"
       pattern="(\d{3})-(\d{3})-(\d{4})">
       <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
         Phone must be in the format ###-###-####.
       </span>
-      <br>
-      <input type="text" name="menuShortName" placeholder="Menu Code"
+  </div>
+
+   <div class="form-group">
+     <label class="control-label">Favoriate Menu Code</label>
+      <input class="form-control" type="text" name="menuShortName" placeholder="Menu Code"
         ng-model="reg.menuShortName"
         ng-maxlength="2"
         required>
-      <br>
+    </div>
 
-    <button
-      ng-disabled="regForm.$invalid"
-      ng-click="reg.submit()">Submit</button>
+    <div class="pull-right">
+      <button class="btn btn-success" ng-click="reg.submit()" ng-disabled="!regForm.$valid">Save</button>
+      <!-- <button class="btn btn-default" ng-click="$ctrl.cancel()">Cancel</button> -->
+    </div>
 
-
-  </form>
-</fieldset>
+</form>
 
 <div id="echo" ng-if="reg.completed">
   Your information has been saved.
