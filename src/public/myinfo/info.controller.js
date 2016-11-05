@@ -13,7 +13,7 @@ function InfoController($rootScope,$state,ApiPath, UserInfoService) {
   $ctrl.basePath = ApiPath;
   UserInfoService.getUser().then(function(data) {
     $ctrl.user = data;
-  }
+  });
 
   $ctrl.$onInit = function($state) {
     if (!UserInfoService.isRegistered()) {
