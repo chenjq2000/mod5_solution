@@ -10,9 +10,10 @@ function RegistrationController(UserInfoService,MenuService) {
   reg.email = '';
   reg.phone = '';
   reg.menuShortName = '';
+  reg.invalidMenuCode = false;
+  reg.completed = false;
 
   reg.submit = function () {
-    reg.submitted = true;
     var userInfo = {
       firstName: reg.firstName,
       lastName: reg.lastName,
@@ -21,8 +22,13 @@ function RegistrationController(UserInfoService,MenuService) {
       menuShortName: reg.menuShortName
 
     };
-    UserInfoService.saveUserInfo(userInfo);
-    reg.completed = true;
+    if (reg.isMenuShortNameValid()) {}
+      UserInfoService.saveUserInfo(userInfo);
+      reg.completed = true;
+    }
+    else {
+      reg.invalidMenuCode = true;
+    }
   };
 
   reg.isMenuShortNameValid = function() {

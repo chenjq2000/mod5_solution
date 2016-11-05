@@ -61,7 +61,7 @@
 <div id="echo" ng-if="reg.completed">
   Your information has been saved.
 </div>
-<div id="error" ng-if="reg.isSubmitted && !reg.isMenuShortNameValid()">
+<div id="error" ng-if="reg.invalidMenuCode">
   No such menu number exists
 </div>
 
