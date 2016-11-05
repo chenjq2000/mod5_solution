@@ -20,10 +20,10 @@ function UserInfoService() {
 
 
   service.getUser = function() {
-    return MenuService.getMenuItem(reg.user.menuShortName).function(data) {
+    return MenuService.getMenuItem(reg.user.menuShortName).then(function(data) {
       service.user.menuItem = data;
       return user;
-    }
+    });
 
   };
 
