@@ -1,11 +1,12 @@
 <div class="container" >
-<fieldset>
+
   <h1 class="text-center">Registration</h1>
   <form name='regForm' novalidate>
 
    <div class="form-group">
         <label class="control-label">First Name</label>
-        <input class="form-control" type="text" name="firstName" placeholder="First Name">
+        <input class="form-control" type="text" name="firstName" placeholder="First Name"
+        ng-model="reg.firstName" ng-maxlength="30" required>
           <span ng-if="regForm.firstName.$invalid && regForm.firstName.$touched">
             Must be a valid first name
           </span>
@@ -15,7 +16,7 @@
           <input class="form-control" type="text" name="lastName" placeholder="Last Name"
             ng-model="reg.lastName"
 
-            ng-maxlength="30"
+            ng-maxlength="60"
             required>
             <span ng-if="regForm.lastName.$invalid && regForm.lastName.$touched">
               Must be a valid last name

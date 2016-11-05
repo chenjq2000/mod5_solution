@@ -5,7 +5,7 @@ angular.module('public')
 .service('UserInfoService', UserInfoService);
 
 UserInfoService.$inject = ['MenuService', 'ApiPath'];
-function UserInfoService() {
+function UserInfoService(MenuService, ApiPath) {
   var service = this;
 
 
@@ -31,9 +31,6 @@ function UserInfoService() {
   service.isRegistered = function() {
     return service.user.lastName !== '';
   };
-
-
-
 
  }
 
