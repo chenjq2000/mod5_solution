@@ -5,7 +5,7 @@
 
 
         <input type="text" name="firstName" placeholder="First Name"
-          ng-model="reg.user.firstName"
+          ng-model="reg.firstName"
 
           ng-maxlength="20"
           required>
@@ -14,7 +14,7 @@
           </span>
           <br>
           <input type="text" name="lastName" placeholder="Last Name"
-            ng-model="reg.user.lastName"
+            ng-model="reg.lastName"
 
             ng-maxlength="30"
             required>
@@ -24,7 +24,7 @@
             <br>
 
     <input type="email" name="email" placeholder="Email"
-      ng-model="reg.user.email"
+      ng-model="reg.email"
       ng-maxlength="60"
       required>
       <span ng-if="regForm.email.$invalid && regForm.email.$touched">
@@ -33,7 +33,7 @@
       <br>
 
     <input type="text" name="phone" placeholder="Phone ###-###-####"
-      ng-model="reg.user.phone"
+      ng-model="reg.phone"
       ng-maxlength="30"
       pattern="(\d{3})-(\d{3})-(\d{4})">
       <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
@@ -41,7 +41,7 @@
       </span>
       <br>
       <input type="text" name="menuShortName" placeholder="Menu 2 char short name"
-        ng-model="reg.user.menuShortName"
+        ng-model="reg.menuShortName"
         ng-maxlength="2"
         required>
 
@@ -50,9 +50,7 @@
       ng-disabled="regForm.$invalid"
       ng-click="reg.submit()">Submit</button>
 
-      <div style="margin-top: 10px;">
-        Form valid? {{ regForm.$valid }}
-      </div>
+
   </form>
 </fieldset>
 
