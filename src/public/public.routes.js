@@ -52,11 +52,6 @@ function routeConfig ($stateProvider) {
       templateUrl: 'src/public/myinfo/info.html',
       controller: 'InfoController',
       controllerAs: 'infocrtl',
-      resolve: {
-        user: ['UserInfoService', function (UserInfoService) {
-          return UserInfoService.getUser();
-        }]
-      }
     });
   }
   })();

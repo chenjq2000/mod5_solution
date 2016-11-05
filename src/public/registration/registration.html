@@ -6,7 +6,7 @@
 
         <input type="text" name="firstName" placeholder="First Name"
           ng-model="reg.user.firstName"
-          minlength="1"
+
           ng-maxlength="20"
           required>
           <span ng-if="regForm.firstName.$invalid && regForm.firstName.$touched">
@@ -15,7 +15,7 @@
           <br>
           <input type="text" name="lastName" placeholder="Last Name"
             ng-model="reg.user.lastName"
-            minlength="1"
+
             ng-maxlength="30"
             required>
             <span ng-if="regForm.lastName.$invalid && regForm.lastName.$touched">
@@ -34,15 +34,14 @@
 
     <input type="text" name="phone" placeholder="Phone ###-###-####"
       ng-model="reg.user.phone"
-      ng-maxlength="60"
+      ng-maxlength="30"
       pattern="(\d{3})-(\d{3})-(\d{4})">
       <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
         Phone must be in the format ###-###-####.
       </span>
       <br>
-      <input type="text" name="menuShortName" placeholder="Last Name"
+      <input type="text" name="menuShortName" placeholder="Menu 2 char short name"
         ng-model="reg.user.menuShortName"
-        minlength="2"
         ng-maxlength="2"
         required>
 

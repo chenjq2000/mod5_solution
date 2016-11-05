@@ -13,7 +13,15 @@ function RegistrationController() {
 
   reg.submit = function () {
     reg.submitted = true;
-    UserInfoService.saveUserInfo(reg.user.firstName, reg.user.lastName,reg.user.email, reg.user.phone, reg.user.menuShortName);
+    var userInfo = {
+      firstName: reg.user.firstName,
+      lastName: reg.user.lastName,
+      email: reg.user.email,
+      phone: reg.user.phone,
+      menuShortName: reg.user.menuShortName
+
+    };
+    UserInfoService.saveUserInfo(userInfo);
     reg.completed = true;
   };
 
