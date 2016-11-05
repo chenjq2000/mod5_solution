@@ -34,7 +34,7 @@ function RegistrationController(UserInfoService,MenuService) {
   reg.isMenuShortNameValid = function() {
     return MenuService.getMenuItem(reg.menuShortName).then(function(data) {
         console.log(data);
-        return true;
+        return data != null;
     });
   }
 }
