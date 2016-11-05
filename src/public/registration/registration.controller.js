@@ -22,7 +22,7 @@ function RegistrationController(UserInfoService,MenuService) {
       menuShortName: reg.menuShortName
 
     };
-    if (reg.isMenuShortNameValid()) {}
+    if (reg.isMenuShortNameValid()) {
       UserInfoService.saveUserInfo(userInfo);
       reg.completed = true;
     }
