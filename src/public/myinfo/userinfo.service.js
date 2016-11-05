@@ -1,27 +1,27 @@
 function UserInfoService() {
   var service = this;
-  var user.firstName = '';
-  var user.lastName = '';
-  var user.email = '';
-  var user.phone = '';
-  var user.menuShortName = '';
-  var user.menuItem;
+  service.user.firstName = '';
+  service.user.lastName = '';
+  service.user.email = '';
+  service.user.phone = '';
+  service.user.menuShortName = '';
+  service.user.menuItem;
 
   /**
    * Load the current user with username and token
    */
   service.saveUserInfo = function(firstName, lastName,email, phone, menuShortName) {
-    user.firstName= firstName;
-    user.lastName = lastName;
-    user.email = email;
-    user.phone = phone;
-    user.menuShortName = menuShortName;
+    service.user.firstName= firstName;
+    service.user.lastName = lastName;
+    service.user.email = email;
+    service.user.phone = phone;
+    service.user.menuShortName = menuShortName;
   };
 
 
   service.getUser = function() {
     return MenuService.getMenuItem(reg.user.menuShortName).function(data) {
-      user.menuItem = data;
+      service.user.menuItem = data;
       return user;
     }
 
@@ -29,7 +29,7 @@ function UserInfoService() {
 
 
   service.isRegistered = function() {
-    return user.lastName !== '';
+    return service.user.lastName !== '';
   };
 
 }
