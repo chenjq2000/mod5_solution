@@ -22,16 +22,18 @@ function RegistrationController(UserInfoService,MenuService) {
       menuShortName: reg.menuShortName
 
     };
-    if (reg.isMenuShortNameValid()) {
-      UserInfoService.saveUserInfo(userInfo);
-      reg.completed = true;
-    }
-    else {
-      reg.invalidMenuCode = true;
-    }
+    reg.checkMenuItemShortName().then(function(success) {
+      if (success) {
+        UserInfoService.saveUserInfo(userInfo);
+        reg.completed = true;
+      }
+      else {
+        reg.invalidMenuCode = true;
+      }
+     });
   };
 
-  reg.isMenuShortNameValid = function() {
+  reg.checkMenuItemShortName = function() {
     return MenuService.getMenuItem(reg.menuShortName).then(function(data) {
         console.log(data);
         return data != null;
