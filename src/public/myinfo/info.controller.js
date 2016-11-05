@@ -9,7 +9,7 @@ angular.module('public')
 .run(init);
 
 
-InfoController.$inject = [$state','ApiPath', 'UserInfoService'];
+InfoController.$inject = ['$state','ApiPath', 'UserInfoService'];
 function InfoController(ApiPath, UserInfoService) {
   var infocrtl = this;
   infocrtl.basePath = ApiPath;
