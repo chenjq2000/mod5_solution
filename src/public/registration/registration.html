@@ -4,9 +4,7 @@
   <form name='regForm' novalidate>
 
 
-        <input type="text" name="firstName" placeholder="First Name"
-          ng-maxlength="20"
-          required>
+        <input type="text" name="firstName" placeholder="First Name">
           <span ng-if="regForm.firstName.$invalid && regForm.firstName.$touched">
             Must be a valid first name
           </span>
@@ -38,7 +36,7 @@
         Phone must be in the format ###-###-####.
       </span>
       <br>
-      <input type="text" name="menuShortName" placeholder="Menu 2 char short name"
+      <input type="text" name="menuShortName" placeholder="Menu code"
         ng-model="reg.menuShortName"
         ng-maxlength="2"
         required>
