@@ -10,12 +10,12 @@ angular.module('public')
 
 
 InfoController.$inject = ['$rootScope','$state','ApiPath', 'UserInfoService'];
-function InfoController(ApiPath, UserInfoService) {
-  var infocrtl = this;
-  infocrtl.basePath = ApiPath;
-  infocrtl.user = UserInfoService.getUser();
+function InfoController($rootScope,$state,ApiPath, UserInfoService) {
+  var $ctrl = this;
+  $ctrl.basePath = ApiPath;
+  $ctrl.user = UserInfoService.getUser();
 
-  infocrtl.$onInit = function($state) {
+  $ctrl.$onInit = function($state) {
     if (!UserInfoService.isRegistered()) {
       $state.go('public.registration');
     }

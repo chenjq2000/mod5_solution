@@ -1,22 +1,22 @@
 
     <div id="info">
-      First Name: {{ infocrtl.user.firstName}} <br>
-      Last Name: {{ infocrtl.user.lastName}} <br>
-      Email: {{ infocrtl.user.email}} <br>
-      Phone: {{ infocrtl.user.phone }}
+      First Name: {{ $ctrl.user.firstName}} <br>
+      Last Name: {{ $ctrl.user.lastName}} <br>
+      Email: {{ $ctrl.user.email}} <br>
+      Phone: {{ $ctrl.user.phone }}
 
 
        <div class="menu-item-tile col-md-6">
          <div class="row">
            <div class="col-sm-5">
              <div class="menu-item-photo">
-               <div> Favorite Menu:{{infocrtl.user.menuItem.short_name}}</div>
-               <img class="img-responsive" width="250" height="150" ng-src="{{infocrtl.user.basePath}}/images/{{infocrtl.user.menuItem.short_name}}.jpg" alt="{{infocrtl.user.menuItem.name}}">
+               <div> Favorite Menu:{{$ctrl.user.menuItem.short_name}}</div>
+               <img class="img-responsive" width="250" height="150" ng-src="{{$ctrl.user.basePath}}/images/{{$ctrl.user.menuItem.short_name}}.jpg" alt="{{$ctrl.user.menuItem.name}}">
              </div>
 
            <div class="menu-item-description col-sm-7">
-             <h3 class="menu-item-title">{{infocrtl.user.menuItem.name}}</h3>
-             <p class="menu-item-details">{{infocrtl.user.menuItem.description}}</p>
+             <h3 class="menu-item-title">{{$ctrl.user.menuItem.name}}</h3>
+             <p class="menu-item-details">{{$ctrl.user.menuItem.description}}</p>
            </div>
          </div>
          <hr class="visible-xs">
