@@ -55,11 +55,7 @@ function routeConfig ($stateProvider) {
       resolve: {
         user: ['UserInfoService', function (UserInfoService) {
           return UserInfoService.getUser();
-        }];
+        }]
       }
     });
-
-
-    ;
-}
 })();
