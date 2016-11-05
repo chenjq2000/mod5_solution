@@ -1,11 +1,9 @@
 (function () {
 "use strict";
 
+
 angular.module('public')
-.component('info', {
-  templateUrl: 'src/public/myinfo/info.html',
-  controller: InfoController
-})
+.controller('InfoController', InfoController);
 
 
 
