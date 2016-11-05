@@ -5,6 +5,7 @@ function UserInfoService() {
   var user.email = '';
   var user.phone = '';
   var user.menuShortName = '';
+  var user.menuItem;
 
   /**
    * Load the current user with username and token
@@ -19,7 +20,11 @@ function UserInfoService() {
 
 
   service.getUser = function() {
-    return user;
+    return MenuService.getMenuItem(reg.user.menuShortName).function(data) {
+      user.menuItem = data;
+      return user;
+    }
+
   };
 
 
