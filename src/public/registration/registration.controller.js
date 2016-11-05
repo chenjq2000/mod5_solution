@@ -3,7 +3,7 @@
 angular.module('public')
 .controller('RegistrationController', RegistrationController);
 RegistrationController.$inject = [ 'UserInfoService','MenuService'];
-function RegistrationController() {
+function RegistrationController(UserInfoService,MenuService) {
   var reg = this;
   reg.firstName = '';
   reg.lastName= '';
