@@ -1,0 +1,11 @@
+
+    <div id="info">
+      First Name: {{ infocrtl.user.firstName}} <br>
+      Last Name: {{ infocrtl.user.lastName}} <br>
+      Email: {{ infocrtl.user.email}} <br>
+      Phone: {{ infocrtl.user.phone }}
+      Favorite Menu:
+      <img class="img-responsive img-rounded admin-img"
+       ng-src="{{infocrtl.apiBasePath}}/{{ infocrtl.user.menuShortName}}.jpg">
+
+    </div>

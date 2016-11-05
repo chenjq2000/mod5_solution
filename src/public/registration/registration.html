@@ -7,7 +7,7 @@
         <input type="text" name="firstName" placeholder="First Name"
           ng-model="reg.user.firstName"
           minlength="1"
-          ng-maxlength="10"
+          ng-maxlength="20"
           required>
           <span ng-if="regForm.firstName.$invalid && regForm.firstName.$touched">
             Must be a valid first name
@@ -16,7 +16,7 @@
           <input type="text" name="lastName" placeholder="Last Name"
             ng-model="reg.user.lastName"
             minlength="1"
-            ng-maxlength="20"
+            ng-maxlength="30"
             required>
             <span ng-if="regForm.lastName.$invalid && regForm.lastName.$touched">
               Must be a valid last name
@@ -25,6 +25,7 @@
 
     <input type="email" name="email" placeholder="Email"
       ng-model="reg.user.email"
+      ng-maxlength="60"
       required>
       <span ng-if="regForm.email.$invalid && regForm.email.$touched">
         Must be a valid email address: handle@domain format
@@ -33,11 +34,18 @@
 
     <input type="text" name="phone" placeholder="Phone ###-###-####"
       ng-model="reg.user.phone"
+      ng-maxlength="60"
       pattern="(\d{3})-(\d{3})-(\d{4})">
       <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
         Phone must be in the format ###-###-####.
       </span>
       <br>
+      <input type="text" name="menuShortName" placeholder="Last Name"
+        ng-model="reg.user.menuShortName"
+        minlength="2"
+        ng-maxlength="2"
+        required>
+
 
     <button
       ng-disabled="regForm.$invalid"
@@ -49,10 +57,11 @@
   </form>
 </fieldset>
 
-<div id="info" ng-if="reg.completed">
-  Firstname: {{ reg.user.firstName}} <br>
-  Lastname: {{ reg.user.lastName}} <br>
-  Email: {{ reg.user.email}} <br>
-  Phone: {{ reg.user.phone }}
+<div id="echo" ng-if="reg.completed">
+  Your information has been saved.
 </div>
+<div id="error" ng-if="reg.isSubmitted && !reg.isMenuShortNameValid()">
+  No such menu number exists
+</div>
+
 </div>
