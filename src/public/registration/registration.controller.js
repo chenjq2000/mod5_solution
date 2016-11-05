@@ -26,6 +26,7 @@ function RegistrationController(UserInfoService,MenuService) {
       if (success) {
         UserInfoService.saveUserInfo(userInfo);
         reg.completed = true;
+        reg.invalidMenuCode = false;
       }
       else {
         reg.invalidMenuCode = true;
