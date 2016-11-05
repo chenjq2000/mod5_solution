@@ -20,6 +20,7 @@ function UserInfoService(MenuService, ApiPath) {
 
 
   service.getUser = function() {
+    console.log("getUser is being called");
     return MenuService.getMenuItem(service.user.menuShortName).then(function(data) {
       service.user.menuItem = data;
       return user;
@@ -29,7 +30,7 @@ function UserInfoService(MenuService, ApiPath) {
 
 
   service.isRegistered = function() {
-    return service.user.lastName !== '';
+    return !(service.user === undefined);
   };
 
  }
