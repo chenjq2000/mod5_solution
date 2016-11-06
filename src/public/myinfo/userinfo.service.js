@@ -23,7 +23,7 @@ function UserInfoService(MenuService, ApiPath) {
     console.log("getUser is being called");
     return MenuService.getMenuItem(service.user.menuShortName).then(function(data) {
       service.user.menuItem = data;
-      return user;
+      return service.user;
     });
 
   };
