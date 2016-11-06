@@ -1,8 +1,8 @@
 <div class="container" >
       <h2  class="text-center">My Info</h2>
-      <div class="category-tile">
+      <div>
          <div class="row">
-           <div class="text-left">
+           <div>
              First Name: {{ infoCtrl.user.firstName}} <br>
              Last Name: {{ infoCtrl.user.lastName}} <br>
              Email: {{ infoCtrl.user.email}} <br>
@@ -11,12 +11,15 @@
            </div>
          </div>
          <div class="row">
-           <div class="col-md-12 col-sm-6 col-xs-6 col-xxs-6">
+           <div>
              <div class="menu-item-photo">
                <div> {{ infoCtrl.user.menuShortName }}</div>
                <img class="img-responsive" width="250" height="150" ng-src="{{infoCtrl.basePath}}/images/{{infoCtrl.user.menuShortName}}.jpg" alt="{{infoCtrl.user.menuItem.name}}">
              </div>
-           <div class="col-md-12 col-sm-6 col-xs-6 col-xxs-6">
+           </div>
+         </div>
+          <div class="row">
+           <div>
              <h3 class="menu-item-title">{{infoCtrl.user.menuItem.name}}</h3>
              <p class="menu-item-details">{{infoCtrl.user.menuItem.description}}</p>
            </div>
