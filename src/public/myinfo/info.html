@@ -1,7 +1,5 @@
 <div class="container" >
-
-
-       <div class="menu-item-tile col-md-6">
+      <div class="menu-item-tile col-md-6">
          <div class="row">
            <div class="category-tile">
              First Name: {{ infoCtrl.user.firstName}} <br>
@@ -12,11 +10,10 @@
            </div>
          </div>
          <div class="row">
-
            <div class="col-sm-5">
              <div class="menu-item-photo">
                <div> Favorite Menu:{{ infoCtrl.user.menuShortName }}</div>
-               <img class="img-responsive" width="250" height="150" ng-src="{{infoCtrl.user.basePath}}/images/{{infoCtrl.user.menuShortName}}.jpg" alt="{{infoCtrl.user.menuItem.name}}">
+               <img class="img-responsive" width="250" height="150" ng-src="{{infoCtrl.basePath}}/images/{{infoCtrl.user.menuShortName}}.jpg" alt="{{infoCtrl.user.menuItem.name}}">
              </div>
 
            <div class="menu-item-description col-sm-7">
